@@ -1,0 +1,35 @@
+{
+  "id": "pitch-deck",
+  "name": "Pitch Deck",
+  "description": "An investor or partnership pitch deck following a classic narrative arc",
+  "version": "1.0",
+  "format": "pptx",
+  "pdf_export": true,
+  "tone": "compelling and visionary",
+  "audience": "investors or strategic partners",
+  "writing_sub_skill": "none",
+  "layout_notes": "Target 12–15 slides. Every slide should earn its place. No bullet soup — use large statements and supporting visuals. Follow the Guy Kawasaki / Sequoia narrative arc: problem → solution → market → traction → team → ask.",
+  "required_sections": [
+    { "id": "title", "title": "Title Slide", "description": "Company name, tagline, logo, presenter, date" },
+    { "id": "problem", "title": "The Problem", "description": "Make the pain visceral and relatable — use a story or stat" },
+    { "id": "solution", "title": "Our Solution", "description": "The 'aha' moment — clear, visual, and memorable" },
+    { "id": "product", "title": "The Product", "description": "How it works — screenshots, demo, or diagram" },
+    { "id": "market", "title": "Market Opportunity", "description": "TAM / SAM / SOM or equivalent — why this is a big opportunity" },
+    { "id": "traction", "title": "Traction", "description": "Revenue, users, growth rate, key customers, notable milestones" },
+    { "id": "business_model", "title": "Business Model", "description": "How you make money" },
+    { "id": "go_to_market", "title": "Go-to-Market", "description": "How you acquire customers" },
+    { "id": "competition", "title": "Competitive Landscape", "description": "Positioning vs alternatives — be honest and specific" },
+    { "id": "team", "title": "The Team", "description": "Why this team can win — relevant experience and track record" },
+    { "id": "financials", "title": "Financials", "description": "Current ARR/MRR, burn, runway, and 3-year projections" },
+    { "id": "ask", "title": "The Ask", "description": "Raise amount, use of funds, and what you're looking for in a partner" }
+  ],
+  "optional_sections": [
+    { "id": "testimonials", "title": "What Customers Say", "description": "1–2 strong customer quotes or case study stats", "include_when": "strong testimonials available" }
+  ],
+  "required_context": ["company_profile", "boilerplate"],
+  "instance_inputs": [
+    { "key": "raise_amount", "label": "Raise amount", "required": false, "default": null },
+    { "key": "traction_headline", "label": "Top traction stat (e.g. '$500k ARR, 3x YoY')", "required": false, "default": null },
+    { "key": "audience_type", "label": "Audience type: investors / partners / accelerator", "required": false, "default": "investors" }
+  ]
+}

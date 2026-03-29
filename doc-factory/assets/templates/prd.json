@@ -1,0 +1,34 @@
+{
+  "id": "prd",
+  "name": "Product Requirements Document",
+  "description": "A PRD or feature spec for internal product or engineering teams",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": false,
+  "tone": "clear and direct",
+  "audience": "internal — product and engineering",
+  "writing_sub_skill": "doc-coauthoring",
+  "required_sections": [
+    { "id": "title", "title": "Title & Metadata", "description": "Feature name, author, date, status (draft/review/approved), version" },
+    { "id": "overview", "title": "Overview", "description": "1–2 paragraph summary of the feature and why it's being built" },
+    { "id": "problem", "title": "Problem Statement", "description": "What problem are we solving? Who is affected?" },
+    { "id": "goals", "title": "Goals & Non-Goals", "description": "What this feature will and will not do" },
+    { "id": "users", "title": "Users & Use Cases", "description": "Who uses this feature and how (user stories or scenarios)" },
+    { "id": "requirements", "title": "Functional Requirements", "description": "Numbered list of specific requirements" },
+    { "id": "non_functional", "title": "Non-Functional Requirements", "description": "Performance, security, accessibility, scalability constraints" },
+    { "id": "design", "title": "Design & UX Notes", "description": "Links to mockups or key UX decisions" },
+    { "id": "success_metrics", "title": "Success Metrics", "description": "How will we know this feature succeeded?" },
+    { "id": "open_questions", "title": "Open Questions", "description": "Decisions still to be made" }
+  ],
+  "optional_sections": [
+    { "id": "technical_notes", "title": "Technical Notes", "description": "Architecture or implementation guidance from engineering", "include_when": "engineering has provided input" },
+    { "id": "risks", "title": "Risks & Dependencies", "description": "Known risks and external dependencies", "include_when": "significant complexity or cross-team dependencies" }
+  ],
+  "required_context": ["company_profile.name"],
+  "instance_inputs": [
+    { "key": "feature_name", "label": "Feature name", "required": true, "default": null },
+    { "key": "author", "label": "Author / product owner", "required": true, "default": null },
+    { "key": "target_release", "label": "Target release / sprint", "required": false, "default": null },
+    { "key": "problem_description", "label": "Problem being solved (1–2 sentences)", "required": true, "default": null }
+  ]
+}

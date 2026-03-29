@@ -1,0 +1,49 @@
+{
+  "_comment": "Apex Creative Studio brand configuration. Professional design and consulting firm.",
+  "_status": "populated",
+  "company_name": "Apex Creative Studio",
+  "tagline": "Strategic Design for Digital Growth",
+  "industry": "Creative Services / Digital Consulting",
+  "tone": "professional, collaborative, direct",
+  "visual_feel": "professional and minimal with strategic accent colors",
+  "colors": {
+    "primary": "#1F3A70",
+    "secondary": "#3D5A9B",
+    "accent": "#FF6B35",
+    "background": "#FFFFFF",
+    "text": "#333333",
+    "heading": "#1F3A70"
+  },
+  "typography": {
+    "heading_font": "Arial",
+    "body_font": "Arial",
+    "heading_size_h1": "32pt",
+    "heading_size_h2": "24pt",
+    "heading_size_h3": "18pt",
+    "body_size": "12pt"
+  },
+  "logo": {
+    "path": "assets/brand/logo.png",
+    "placement": "top-left",
+    "max_width_px": 150
+  },
+  "spacing": {
+    "page_margin_top_mm": 25,
+    "page_margin_bottom_mm": 25,
+    "page_margin_left_mm": 25,
+    "page_margin_right_mm": 25,
+    "paragraph_spacing_pt": 6
+  },
+  "table_style": {
+    "header_background": "#1F3A70",
+    "header_text_color": "#FFFFFF",
+    "row_alt_background": "#F0F4F8",
+    "border_color": "#CCCCCC"
+  },
+  "cover_page": {
+    "style": "full-bleed",
+    "background_color": "#1F3A70",
+    "title_color": "#FFFFFF",
+    "subtitle_color": "#FF6B35"
+  }
+}

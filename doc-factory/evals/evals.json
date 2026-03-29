@@ -1,0 +1,47 @@
+{
+  "skill_name": "doc-factory",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to put together a proposal for a new client — a mid-sized e-commerce company called ShopSpark. We'd be doing a 3-month brand strategy and website redesign project for them. Our fee is $28,000. Can you create the proposal document for me?",
+      "expected_output": "A complete client proposal DOCX (and PDF) with all required sections: cover page, exec summary, situation understanding, solution, scope of work, timeline, investment/pricing, terms, and next steps. The document should reference the company brand config and pull from the context library for company info and standard terms. Instance inputs (client name, scope, fee) should be populated throughout.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Generate a price list for our services. We offer: Brand Strategy ($8,000 flat), Website Design ($12,000–$18,000), Monthly Retainer ($3,500/month), and SEO Audit ($2,500). Currency USD. Make it look professional.",
+      "expected_output": "A formatted XLSX price list with branded header rows. Columns for service name, description, pricing, and notes. Uses Excel formulas (not hardcoded totals). Brand primary color applied to headers. PDF export. Zero formula errors.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I need a project status update doc for our 'Horizon Platform' build. We're reporting for week of March 17. Status is Amber — we're behind on the API integration milestone. Progress: completed UI for all 5 screens. Plans: finish API layer next week. Problems: third-party API docs are out of date, raising risk of a 1-week delay.",
+      "expected_output": "A clean project status update DOCX using the status-update template. Header shows Amber RAG status. Three sections: Progress, Plans, Problems — each populated with the given content. Concise, professional tone. The internal-comms sub-skill format should be followed.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We need an NDA to send to a potential technology partner called Nexus Systems Ltd (they're based in London). It should be a mutual NDA, valid for 2 years, covering our discussions about a potential joint product development arrangement.",
+      "expected_output": "A complete mutual NDA DOCX with all required sections: parties, background, definition of confidential information, obligations, exceptions, term (2 years), general provisions (governing law), and signature blocks. Client details (Nexus Systems Ltd, London) and purpose populated correctly. PDF export included.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Can you show me all the templates you have? I want to see what's available before I decide what to make.",
+      "expected_output": "The skill runs scripts/preview_gallery.py and produces an HTML gallery file. The user receives a link to open the gallery in their browser. The gallery visually shows all 13 templates plus 4 document packages as mockup cards, filterable by format. The skill also summarises the available templates in the conversation.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I just won a new client — Meridian Health Tech, contact is Dr. Sarah Okafor (Head of Digital). They want a 3-month UX research and product design sprint at £24,000 starting May 2026. Create a full client onboarding pack for them.",
+      "expected_output": "The skill detects the 'client-onboarding' package trigger. It reads packages.json, confirms the package contents (Proposal + NDA + SOW), gathers shared inputs (client name, contact, project title, scope, fee, start date) in a single grouped message, then generates all three documents in order (NDA first, then Proposal, then SOW). All three cross-reference each other consistently — same client name, fee, governing law. Delivered in a named output folder. A new client entry for Meridian Health Tech is created in clients.json. Registry entries written for all three documents with package_id set.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Add a new client to our records: TechFlow AI, contact is Marcus James (Head of Product, marcus@techflowai.com), they're a Series B AI startup based in London. Then create a project for them: a 6-week AI Dashboard Design project at £18,000, starting 1st April 2026.",
+      "expected_output": "The skill creates a new entry in clients.json with the TechFlow AI details. It then creates a project entry in projects.json linked to that client, with name, scope, fee, start date, and status 'active'. Both files are updated and saved. The skill confirms what was saved and shows a summary of the new client and project records.",
+      "files": []
+    }
+  ]
+}

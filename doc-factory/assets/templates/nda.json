@@ -1,0 +1,34 @@
+{
+  "id": "nda",
+  "name": "Non-Disclosure Agreement",
+  "description": "A mutual or one-way NDA for protecting confidential information",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "formal",
+  "audience": "external party",
+  "writing_sub_skill": "none",
+  "required_sections": [
+    { "id": "cover", "title": "Cover Page", "description": "NDA title, parties, date" },
+    { "id": "parties", "title": "Parties", "description": "Full legal names and addresses" },
+    { "id": "background", "title": "Background", "description": "Why the parties are sharing confidential information" },
+    { "id": "definition", "title": "Definition of Confidential Information", "description": "What information is covered" },
+    { "id": "obligations", "title": "Obligations of Receiving Party", "description": "How confidential information must be handled" },
+    { "id": "exceptions", "title": "Exceptions", "description": "What is NOT confidential (public domain, independently developed, etc.)" },
+    { "id": "term", "title": "Term", "description": "Duration of confidentiality obligations" },
+    { "id": "general", "title": "General", "description": "Governing law, entire agreement, amendments" },
+    { "id": "signatures", "title": "Signatures", "description": "Execution blocks for both parties" }
+  ],
+  "optional_sections": [
+    { "id": "permitted_disclosure", "title": "Permitted Disclosure", "description": "Disclosure to employees/advisers on a need-to-know basis", "include_when": "mutual NDA or large organisation" }
+  ],
+  "required_context": ["company_profile", "legal_clauses.confidentiality", "legal_clauses.governing_law"],
+  "instance_inputs": [
+    { "key": "counterparty_name", "label": "Other party's legal name", "required": true, "default": null },
+    { "key": "counterparty_address", "label": "Other party's address", "required": false, "default": null },
+    { "key": "nda_type", "label": "Mutual or one-way?", "required": true, "default": "mutual" },
+    { "key": "purpose", "label": "Purpose of the NDA (e.g. 'evaluating a potential partnership')", "required": true, "default": null },
+    { "key": "duration_years", "label": "Confidentiality period (years)", "required": false, "default": "3" },
+    { "key": "effective_date", "label": "Effective date", "required": true, "default": null }
+  ]
+}

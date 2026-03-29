@@ -1,0 +1,30 @@
+{
+  "services": [
+    {
+      "id": "strategy",
+      "name": "Digital Strategy",
+      "description": "Define your digital roadmap and transformation priorities.",
+      "deliverables": [
+        "Strategy report",
+        "Roadmap",
+        "Executive presentation"
+      ],
+      "base_price": 12000,
+      "billing": "fixed"
+    },
+    {
+      "id": "implementation",
+      "name": "AI Implementation",
+      "description": "End-to-end deployment of AI-powered workflows.",
+      "deliverables": [
+        "Technical architecture",
+        "Deployed solution",
+        "Training materials"
+      ],
+      "base_price": 45000,
+      "billing": "milestone"
+    }
+  ],
+  "type": "services.catalog",
+  "updated_at": "2026-03-24T00:16:42.461757"
+}

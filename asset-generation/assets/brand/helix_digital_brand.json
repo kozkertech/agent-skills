@@ -1,0 +1,70 @@
+{
+  "brand_name": "Helix Digital",
+  "industry": "digital services",
+  "visual_feel": "modern_and_clean",
+  "tone": "professional",
+  "archetype": "clean_professional",
+  "logo": {
+    "enabled": false,
+    "path": "",
+    "use_text_fallback_when_missing": true
+  },
+  "colours": {
+    "primary": "#1F1F1F",
+    "secondary": "#4A90D9",
+    "text": "#1E1E1E",
+    "background": "#FFFFFF",
+    "muted": "#F5F5F5"
+  },
+  "fonts": {
+    "heading": "Calibri",
+    "body": "Calibri"
+  },
+  "spacing": {
+    "page_margin_inches": 1.0,
+    "line_spacing": 1.15,
+    "paragraph_spacing_pt": 6,
+    "section_spacing_pt": 12
+  },
+  "logo_rules": {
+    "docx": {
+      "placement": "header-right",
+      "width_inches": 1.0
+    },
+    "pptx": {
+      "placement": "top-right",
+      "width_inches": 0.8
+    },
+    "xlsx": {
+      "placement": "cover-sheet-top-left",
+      "width_inches": 1.1
+    },
+    "pdf": {
+      "placement": "header-right",
+      "width_inches": 0.9
+    }
+  },
+  "document_rules": {
+    "heading_style": "strong_clean_hierarchy",
+    "table_style": "subtle_filled_header",
+    "bullet_style": "simple_round",
+    "cover_page": true
+  },
+  "format_defaults": {
+    "docx": {
+      "use_header_logo": true,
+      "default_title_alignment": "left"
+    },
+    "pptx": {
+      "default_layout_family": "clean_corporate",
+      "title_alignment": "left"
+    },
+    "xlsx": {
+      "use_cover_sheet": true,
+      "freeze_header_rows": true
+    },
+    "pdf": {
+      "include_page_numbers": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "_comment": "Apex Creative Studio context library with services, legal terms, and team bios.",
+  "_status": "populated",
+  "company_profile": {
+    "name": "Apex Creative Studio",
+    "tagline": "Strategic Design for Digital Growth",
+    "about": "Apex Creative Studio is a full-service design and digital strategy firm specializing in brand development, user experience design, and web solutions for mid-market companies. Founded in 2015, we combine strategic thinking with creative excellence to deliver measurable business results.",
+    "website": "www.apexcreative.uk",
+    "email": "hello@apexcreative.uk",
+    "phone": "+44 (0)20 7946 0958",
+    "address": "123 Design Street, London, UK, SW1A 1AA",
+    "founded": "2015",
+    "size": "25-50 employees"
+  },
+  "services": [
+    {
+      "id": "brand-strategy",
+      "name": "Brand Strategy",
+      "description": "Comprehensive brand strategy development including positioning, messaging architecture, visual identity guidelines, and brand implementation roadmaps.",
+      "unit": "Flat Rate",
+      "price": 8000,
+      "pricing": "$8,000"
+    },
+    {
+      "id": "web-design",
+      "name": "Website Design",
+      "description": "User-centered web design and development services including UX research, responsive design, CMS integration, and performance optimization.",
+      "unit": "Project",
+      "price_min": 12000,
+      "price_max": 18000,
+      "pricing": "$12,000\u2013$18,000"
+    },
+    {
+      "id": "monthly-retainer",
+      "name": "Monthly Retainer",
+      "description": "Ongoing design and strategic consulting support with dedicated resources and priority turnaround on deliverables.",
+      "unit": "Monthly",
+      "price": 3500,
+      "pricing": "$3,500/month"
+    },
+    {
+      "id": "seo-audit",
+      "name": "SEO Audit",
+      "description": "Comprehensive technical and content SEO audit including competitive analysis, recommendations, and implementation roadmap.",
+      "unit": "Flat Rate",
+      "price": 2500,
+      "pricing": "$2,500"
+    }
+  ],
+  "legal_clauses": {
+    "payment_terms": "50% deposit due upon project kickoff, 50% due upon project completion. All invoices are due net 30 days from invoice date. Projects will be placed on hold if payment is overdue.",
+    "late_payment": "Late payments subject to 1.5% monthly interest charge or the maximum allowed by law, whichever is less.",
+    "liability_cap": "Apex Creative Studio's total liability shall not exceed the total fees paid by Client for the Services.",
+    "ip_ownership": "Client owns all final deliverables and intellectual property created specifically for this project. Apex retains ownership of pre-existing materials, templates, and methodologies.",
+    "confidentiality": "Both parties agree to maintain the confidentiality of any proprietary or sensitive business information shared during the engagement.",
+    "governing_law": "England and Wales",
+    "dispute_resolution": "Any disputes arising from this Agreement shall first be addressed through good-faith negotiation. If unresolved, disputes shall be subject to binding arbitration.",
+    "termination": "Either party may terminate this Agreement with 30 days written notice. Client remains responsible for all work completed prior to termination."
+  },
+  "case_studies": [
+    {
+      "id": "cs-ecommerce-redesign",
+      "client": "TechGear Online",
+      "industry": "E-commerce / Retail",
+      "challenge": "Legacy website with poor conversion rates and outdated user experience driving customer abandonment at checkout.",
+      "solution": "Conducted user research and competitive analysis, redesigned website architecture, implemented modern responsive design, and optimized checkout flow.",
+      "result": "42% increase in conversion rate, 35% reduction in cart abandonment, 60% improvement in mobile engagement."
+    },
+    {
+      "id": "cs-brand-refresh",
+      "client": "GrowthCorp SaaS",
+      "industry": "Software as a Service",
+      "challenge": "Mid-market SaaS company with confusing brand messaging and outdated visual identity struggling to differentiate in competitive market.",
+      "solution": "Developed comprehensive brand strategy, created new visual identity system, restructured messaging architecture, and produced brand guidelines.",
+      "result": "Increased brand perception of innovation by 50%, improved website traffic by 38%, supported successful Series A funding round."
+    }
+  ],
+  "project_info": {
+    "active_projects": [
+      {
+        "name": "E-commerce Platform Migration",
+        "client": "Retail Solutions Inc",
+        "status": "In Progress",
+        "completion_date": "Q2 2026"
+      }
+    ]
+  },
+  "team_bios": [
+    {
+      "name": "Sarah Chen",
+      "title": "Creative Director & Founder",
+      "bio": "Sarah leads strategic vision and brand development. With 12+ years in design and marketing, she has delivered campaigns for Fortune 500 companies and scaling startups. Passionate about solving complex business problems through thoughtful design.",
+      "specialties": [
+        "Brand Strategy",
+        "Creative Direction"
+      ]
+    },
+    {
+      "name": "Marcus Rodriguez",
+      "title": "Lead Designer",
+      "bio": "Marcus specializes in digital product design with deep expertise in UX research and interaction design. He brings a human-centered approach to every project, ensuring solutions are both beautiful and functional.",
+      "specialties": [
+        "UX/UI Design",
+        "Web Design",
+        "User Research"
+      ]
+    },
+    {
+      "name": "Priya Patel",
+      "title": "Strategy Consultant",
+      "bio": "Priya advises clients on digital transformation and business strategy. Her background in business development and marketing strategy helps align design solutions with business objectives.",
+      "specialties": [
+        "Digital Strategy",
+        "Business Analysis",
+        "Roadmap Planning"
+      ]
+    }
+  ],
+  "boilerplate": {
+    "about_us_short": "Apex Creative Studio is a strategic design firm transforming businesses through digital innovation and brand excellence.",
+    "about_us_long": "Founded in 2015, Apex Creative Studio partners with ambitious companies to solve complex business challenges through thoughtful design and strategic planning. We combine deep industry expertise with creative excellence to deliver measurable results. Our team of strategists, designers, and technologists work collaboratively with clients to create digital experiences that drive growth.",
+    "value_proposition": "We deliver strategic design solutions that combine business acumen with creative excellence, resulting in measurable ROI and sustainable competitive advantage.",
+    "why_us": "Apex brings a unique combination of strategic thinking, design excellence, and technical expertise. We don't just create beautiful work\u2014we create work that drives business results. Our collaborative approach ensures your vision is realized while exceeding expectations."
+  },
+  "document_registry": [
+    {
+      "id": "doc-001",
+      "type": "proposal",
+      "title": "Brand Strategy & Website Redesign Proposal",
+      "client": "ShopSpark",
+      "created_at": "2026-03-23",
+      "file_path": "workspace/iteration-2/eval-1-proposal/with_skill/outputs/ShopSpark-Proposal.docx",
+      "package_id": null,
+      "context_snapshot": {
+        "services_used": [
+          "brand-strategy",
+          "web-design"
+        ],
+        "fee_total": 28000,
+        "fee_breakdown": {
+          "brand_strategy": 10000,
+          "website_redesign": 18000
+        },
+        "payment_terms": "50% deposit, 50% on completion",
+        "governing_law": "England and Wales",
+        "company_name": "Apex Creative Studio",
+        "contact_email": "hello@apexcreative.uk"
+      }
+    }
+  ]
+}

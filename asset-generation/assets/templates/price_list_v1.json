@@ -1,0 +1,34 @@
+{
+  "template_id": "price_list_v20260324",
+  "name": "Price List",
+  "document_type": "price_list",
+  "audience": "client",
+  "purpose": "Service pricing and rate card",
+  "preferred_format": "xlsx",
+  "pdf_export_default": true,
+  "tone": "professional",
+  "layout_style": "clean_corporate",
+  "required_sections": [
+    "cover_page",
+    "pricing",
+    "terms"
+  ],
+  "optional_sections": [
+    "services",
+    "packages",
+    "notes"
+  ],
+  "context_dependencies": [
+    "services.catalog",
+    "pricing.current",
+    "legal.standard_clauses"
+  ],
+  "document_inputs": [],
+  "rules": {
+    "allow_tables": true,
+    "allow_images": true,
+    "allow_charts": false,
+    "max_heading_depth": 3
+  },
+  "created_at": "2026-03-24T00:16:50.488768"
+}

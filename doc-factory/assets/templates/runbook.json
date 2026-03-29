@@ -1,0 +1,32 @@
+{
+  "id": "runbook",
+  "name": "Operational Runbook",
+  "description": "A step-by-step runbook for a repeatable operational process or procedure",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": false,
+  "tone": "clear, imperative, unambiguous",
+  "audience": "internal operations or technical team",
+  "writing_sub_skill": "none",
+  "layout_notes": "Each step should be numbered. Include expected output and error handling for each major step. Use callout boxes for warnings and tips.",
+  "required_sections": [
+    { "id": "header", "title": "Document Header", "description": "Runbook title, process owner, version, last reviewed date, audience" },
+    { "id": "overview", "title": "Overview", "description": "What this runbook does, when to use it, and expected outcome" },
+    { "id": "prerequisites", "title": "Prerequisites", "description": "Access, tools, credentials, or conditions required before starting" },
+    { "id": "steps", "title": "Steps", "description": "Numbered step-by-step instructions with commands, screenshots, or decision points" },
+    { "id": "verification", "title": "Verification", "description": "How to confirm the process completed successfully" },
+    { "id": "rollback", "title": "Rollback / Recovery", "description": "What to do if something goes wrong" },
+    { "id": "escalation", "title": "Escalation", "description": "Who to contact if the runbook fails or an unexpected situation arises" }
+  ],
+  "optional_sections": [
+    { "id": "troubleshooting", "title": "Troubleshooting", "description": "Common errors and their fixes", "include_when": "known failure modes exist" },
+    { "id": "change_log", "title": "Change Log", "description": "Version history of this runbook", "include_when": "runbook has been revised" }
+  ],
+  "required_context": ["company_profile.name"],
+  "instance_inputs": [
+    { "key": "process_name", "label": "Process / procedure name", "required": true, "default": null },
+    { "key": "process_owner", "label": "Process owner (name or role)", "required": false, "default": null },
+    { "key": "steps_description", "label": "Description of the steps or process to document", "required": true, "default": null },
+    { "key": "audience", "label": "Who will run this runbook", "required": false, "default": "operations team" }
+  ]
+}

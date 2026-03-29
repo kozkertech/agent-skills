@@ -1,0 +1,30 @@
+{
+  "id": "case-study",
+  "name": "Case Study",
+  "description": "A client success story for marketing and sales use",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "engaging and credible",
+  "audience": "prospective clients",
+  "writing_sub_skill": "none",
+  "required_sections": [
+    { "id": "header", "title": "Header", "description": "Company logo, case study title, client name/industry, key result stat in large format" },
+    { "id": "at_a_glance", "title": "At a Glance", "description": "Sidebar or callout box with: client, industry, services, outcome stats" },
+    { "id": "challenge", "title": "The Challenge", "description": "What the client was struggling with before working with us" },
+    { "id": "solution", "title": "Our Solution", "description": "How we approached the problem and what we delivered" },
+    { "id": "results", "title": "The Results", "description": "Quantified outcomes — use numbers, percentages, timeframes wherever possible" },
+    { "id": "quote", "title": "Client Quote", "description": "Pull quote from a client stakeholder (optional if none available)" },
+    { "id": "cta", "title": "About Us / CTA", "description": "Brief company intro and call to action" }
+  ],
+  "optional_sections": [],
+  "required_context": ["company_profile", "boilerplate.about_us_short"],
+  "instance_inputs": [
+    { "key": "client_display_name", "label": "Client display name (can be anonymised)", "required": true, "default": null },
+    { "key": "industry", "label": "Client industry", "required": true, "default": null },
+    { "key": "challenge", "label": "The client's challenge", "required": true, "default": null },
+    { "key": "solution", "label": "What we did", "required": true, "default": null },
+    { "key": "results", "label": "Results achieved (quantified if possible)", "required": true, "default": null },
+    { "key": "quote", "label": "Client testimonial quote (optional)", "required": false, "default": null }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "sow",
+  "name": "Statement of Work",
+  "description": "A formal statement of work for an agreed engagement",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "formal",
+  "audience": "external client",
+  "writing_sub_skill": "doc-coauthoring",
+  "required_sections": [
+    { "id": "cover", "title": "Cover Page", "description": "Company and client logos, SOW title, version, date, signatories" },
+    { "id": "parties", "title": "Parties", "description": "Full legal names and addresses of both parties" },
+    { "id": "background", "title": "Background & Objectives", "description": "Context for the engagement and what success looks like" },
+    { "id": "scope", "title": "Scope of Services", "description": "Detailed description of deliverables and activities included" },
+    { "id": "out_of_scope", "title": "Out of Scope", "description": "Explicit list of what is NOT included" },
+    { "id": "deliverables", "title": "Deliverables", "description": "Table of deliverables with acceptance criteria and due dates" },
+    { "id": "timeline", "title": "Project Timeline", "description": "Phases, milestones, and key dates" },
+    { "id": "responsibilities", "title": "Responsibilities", "description": "What each party is responsible for providing or doing" },
+    { "id": "fees", "title": "Fees & Payment", "description": "Fee schedule, payment milestones, and payment terms" },
+    { "id": "change_control", "title": "Change Control", "description": "Process for requesting and approving scope changes" },
+    { "id": "terms", "title": "Terms & Conditions", "description": "Legal terms governing this SOW" },
+    { "id": "signatures", "title": "Signatures", "description": "Signature blocks for both parties" }
+  ],
+  "optional_sections": [],
+  "required_context": ["company_profile", "legal_clauses"],
+  "instance_inputs": [
+    { "key": "client_name", "label": "Client legal name", "required": true, "default": null },
+    { "key": "client_address", "label": "Client address", "required": false, "default": null },
+    { "key": "sow_title", "label": "SOW title", "required": true, "default": null },
+    { "key": "deliverables", "label": "List of deliverables", "required": true, "default": null },
+    { "key": "start_date", "label": "Start date", "required": true, "default": null },
+    { "key": "end_date", "label": "End date", "required": true, "default": null },
+    { "key": "total_fee", "label": "Total fee", "required": true, "default": null }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "payment_terms": "50% deposit upon project initiation, balance due upon completion",
+  "billing_period": "Monthly for retainer packages, one-time for fixed packages",
+  "confidentiality": "All work product and client information is kept strictly confidential",
+  "liability": "Liability is limited to the amount paid for services",
+  "warranty": "Services are provided as described. Revisions included per package scope.",
+  "cancellation": "For retainer agreements, 30 days written notice required",
+  "type": "legal.standard_clauses",
+  "updated_at": "2026-03-23T15:12:09.635009"
+}

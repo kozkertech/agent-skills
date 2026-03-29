@@ -1,0 +1,30 @@
+{
+  "type": "proof.case_studies",
+  "case_studies": [
+    {
+      "id": "cs_001",
+      "client": "NorthStar Logistics",
+      "challenge": "Manual reporting consuming 40 hours per week across finance teams.",
+      "solution": "Implemented automated reporting pipeline with live dashboards and anomaly detection.",
+      "outcome": "Reporting time reduced from 40 hrs/week to 3 hrs/week \u2014 a 92% reduction.",
+      "metrics": {
+        "hours_saved_weekly": 37,
+        "roi_months": 4
+      },
+      "added_at": "2026-03-24T00:16:42.524966"
+    },
+    {
+      "id": "cs_002",
+      "client": "Apex Capital",
+      "challenge": "Slow credit risk assessment taking 5 days per application.",
+      "solution": "Deployed AI-driven risk scoring model integrated with existing CRM.",
+      "outcome": "Assessment time reduced to 4 hours, approval accuracy improved by 18%.",
+      "metrics": {
+        "time_reduction_hours": 116,
+        "accuracy_gain_pct": 18
+      },
+      "added_at": "2026-03-24T00:16:42.556120"
+    }
+  ],
+  "updated_at": "2026-03-24T00:16:42.556142"
+}

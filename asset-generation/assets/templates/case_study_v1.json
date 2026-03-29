@@ -1,0 +1,38 @@
+{
+  "template_id": "case_study_v1",
+  "name": "Standard Case Study",
+  "document_type": "case_study",
+  "audience": "client",
+  "purpose": "Client success story showcasing challenge, solution, and measurable outcomes",
+  "preferred_format": "docx",
+  "pdf_export_default": true,
+  "tone": "professional",
+  "layout_style": "clean_corporate",
+  "required_sections": [
+    "cover_page",
+    "client_background",
+    "challenge",
+    "solution",
+    "results",
+    "testimonial"
+  ],
+  "optional_sections": [
+    "methodology",
+    "next_steps"
+  ],
+  "context_dependencies": [
+    "company.profile",
+    "proof.case_study"
+  ],
+  "document_inputs": [
+    "client_name",
+    "project_name",
+    "industry"
+  ],
+  "rules": {
+    "allow_tables": true,
+    "allow_images": true,
+    "allow_charts": false,
+    "max_heading_depth": 3
+  }
+}

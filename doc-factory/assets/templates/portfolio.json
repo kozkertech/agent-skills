@@ -1,0 +1,30 @@
+{
+  "id": "portfolio",
+  "name": "Portfolio / Capabilities Document",
+  "description": "A company capabilities or portfolio document for sales and business development",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "confident and engaging",
+  "audience": "prospective clients or partners",
+  "writing_sub_skill": "none",
+  "required_sections": [
+    { "id": "cover", "title": "Cover Page", "description": "Logo, company name, tagline, contact details" },
+    { "id": "about", "title": "About Us", "description": "Who we are, what we do, our mission" },
+    { "id": "services", "title": "Our Services", "description": "Overview of all service lines with brief descriptions" },
+    { "id": "approach", "title": "Our Approach", "description": "How we work — methodology, values, process" },
+    { "id": "work", "title": "Selected Work", "description": "3–5 brief project snapshots or case study highlights" },
+    { "id": "clients", "title": "Clients & Industries", "description": "Client logos or industry names we've worked with" },
+    { "id": "team", "title": "Our Team", "description": "Key personnel bios and photos" },
+    { "id": "contact", "title": "Get in Touch", "description": "Contact details, website, social links, call to action" }
+  ],
+  "optional_sections": [
+    { "id": "testimonials", "title": "What Clients Say", "description": "2–3 client testimonials", "include_when": "testimonials are available in case_studies" },
+    { "id": "awards", "title": "Awards & Recognition", "description": "Notable awards, certifications, or press mentions", "include_when": "accolades are available" }
+  ],
+  "required_context": ["company_profile", "services", "case_studies", "team_bios", "boilerplate"],
+  "instance_inputs": [
+    { "key": "target_industry", "label": "Target industry focus (or 'general')", "required": false, "default": "general" },
+    { "key": "include_pricing", "label": "Include indicative pricing? (yes/no)", "required": false, "default": "no" }
+  ]
+}

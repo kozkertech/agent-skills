@@ -1,0 +1,100 @@
+{
+  "_comment": "Document package bundles. Each package defines a named set of templates, shared instance inputs, and cross-reference rules. When a user requests a package, all documents are generated in a single flow with consistent data.",
+  "packages": [
+    {
+      "id": "client-onboarding",
+      "name": "Client Onboarding Pack",
+      "description": "Full onboarding set for a new client. Covers the commercial conversation (proposal), the legal handshake (NDA), and the work definition (SOW) — all cross-referenced and consistently dated.",
+      "documents": ["proposal", "nda", "sow"],
+      "output_folder_pattern": "{client_name}-onboarding-{date}",
+      "shared_inputs": [
+        { "key": "client_name", "label": "Client name", "required": true },
+        { "key": "client_contact", "label": "Client contact person", "required": false },
+        { "key": "project_title", "label": "Project / engagement title", "required": true },
+        { "key": "scope_items", "label": "Scope of work (describe in plain English)", "required": true },
+        { "key": "fee_total", "label": "Total engagement fee", "required": false, "default": "TBD" },
+        { "key": "start_date", "label": "Estimated start date", "required": false }
+      ],
+      "cross_references": [
+        "The SOW scope section must exactly match the scope described in the Proposal",
+        "The NDA is dated the same day as the Proposal and references the same project title",
+        "The Proposal investment section references 'full scope detailed in the SOW'",
+        "All three documents use the same client_name, fee_total, and governing law from context library"
+      ],
+      "generation_order": ["nda", "proposal", "sow"],
+      "generation_order_reason": "NDA first (shortest, no content dependency), then Proposal (sets the commercial framing), then SOW (inherits scope and fee from Proposal)",
+      "trigger_phrases": ["client onboarding", "onboarding pack", "new client pack", "full proposal pack", "onboarding documents", "everything for a new client"]
+    },
+    {
+      "id": "deal-close",
+      "name": "Deal Close Pack",
+      "description": "The documents needed to formally close and kick off a signed deal: a Contract (with the SOW attached as Exhibit A) and an updated Price List.",
+      "documents": ["contract", "sow", "price-list"],
+      "output_folder_pattern": "{client_name}-deal-close-{date}",
+      "shared_inputs": [
+        { "key": "client_name", "label": "Client name", "required": true },
+        { "key": "client_contact", "label": "Client signatory name and title", "required": true },
+        { "key": "project_title", "label": "Project title", "required": true },
+        { "key": "scope_items", "label": "Final agreed scope", "required": true },
+        { "key": "fee_total", "label": "Total contract value", "required": true },
+        { "key": "start_date", "label": "Contract start date", "required": true },
+        { "key": "end_date", "label": "Contract end date", "required": false }
+      ],
+      "cross_references": [
+        "The Contract references the SOW as Exhibit A and includes a line: 'Scope of services is defined in Exhibit A attached hereto'",
+        "The fee schedule in the Contract matches the Price List exactly",
+        "The SOW milestone dates align with start_date and end_date in the Contract",
+        "All three documents use the same client_name, fee_total, governing law, and payment terms"
+      ],
+      "generation_order": ["sow", "price-list", "contract"],
+      "generation_order_reason": "SOW first (defines scope), Price List second (sets fees), Contract last (incorporates both as references)",
+      "trigger_phrases": ["deal close", "close this deal", "contract pack", "ready to sign", "signing pack", "close the deal"]
+    },
+    {
+      "id": "new-business",
+      "name": "New Business Pack",
+      "description": "Sales collateral for pitching a new prospect: a Pitch Deck for the meeting, a Price List to leave behind, and a Case Study relevant to their industry.",
+      "documents": ["pitch-deck", "price-list", "case-study"],
+      "output_folder_pattern": "{client_name}-pitch-{date}",
+      "shared_inputs": [
+        { "key": "client_name", "label": "Prospect / company name", "required": true },
+        { "key": "client_contact", "label": "Key decision-maker name", "required": false },
+        { "key": "industry", "label": "Prospect's industry", "required": false },
+        { "key": "pain_points", "label": "Known pain points or goals", "required": false },
+        { "key": "relevant_services", "label": "Services you're pitching", "required": true }
+      ],
+      "cross_references": [
+        "The Pitch Deck closing slide references the Price List: 'Full pricing available in the attached sheet'",
+        "The Case Study selected should be from the same or a closely adjacent industry to the prospect",
+        "The services featured in the Pitch Deck match the line items shown in the Price List",
+        "If the prospect's name is known, personalise the Pitch Deck cover with their company name"
+      ],
+      "generation_order": ["case-study", "price-list", "pitch-deck"],
+      "generation_order_reason": "Case Study first (confirm which one is most relevant), Price List second (confirm what's being pitched), Pitch Deck last (references both)",
+      "trigger_phrases": ["pitch pack", "new business pack", "sales pack", "pitch materials", "prospect kit", "meeting with a prospect"]
+    },
+    {
+      "id": "project-kickoff",
+      "name": "Project Kickoff Pack",
+      "description": "Everything needed to start a project smoothly: SOW (the contract for the work), a recurring Status Update template, and a Runbook for the operational workflow.",
+      "documents": ["sow", "status-update", "runbook"],
+      "output_folder_pattern": "{project_title}-kickoff-{date}",
+      "shared_inputs": [
+        { "key": "client_name", "label": "Client name", "required": true },
+        { "key": "project_title", "label": "Project name", "required": true },
+        { "key": "start_date", "label": "Project start date", "required": true },
+        { "key": "end_date", "label": "Project end date", "required": false },
+        { "key": "scope_items", "label": "What the project covers", "required": true },
+        { "key": "key_milestones", "label": "Key milestones and dates", "required": false }
+      ],
+      "cross_references": [
+        "The Status Update template's 'Milestones' section is pre-populated with the milestones from the SOW",
+        "The Runbook's 'Project Contacts' section references the client name and internal leads from the SOW",
+        "All three documents use the same project_title and client_name"
+      ],
+      "generation_order": ["sow", "runbook", "status-update"],
+      "generation_order_reason": "SOW first (defines all project details), Runbook second (uses SOW context for procedures), Status Update last (inherits milestones from SOW)",
+      "trigger_phrases": ["project kickoff", "kickoff pack", "start the project", "project start documents", "spin up a project"]
+    }
+  ]
+}

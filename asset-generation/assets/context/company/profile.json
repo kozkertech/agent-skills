@@ -1,0 +1,24 @@
+{
+  "name": "Meridian Advisory",
+  "description": "A strategic consulting firm specialising in digital transformation and AI implementation.",
+  "differentiators": [
+    "Deep technical expertise",
+    "Client-centric approach",
+    "Proven delivery track record"
+  ],
+  "founded": 2015,
+  "employees": 32,
+  "headquarters": "Austin, TX",
+  "website": "www.helixdigital.com",
+  "type": "company.profile",
+  "updated_at": "2026-03-24T00:16:42.424318",
+  "positioning": "We transform businesses through strategic cloud migration, delivering measurable ROI and operational excellence.",
+  "industries_served": [
+    "financial services",
+    "healthcare",
+    "manufacturing",
+    "technology"
+  ],
+  "industry": "Digital Services",
+  "contact": "hello@helixdigital.com"
+}

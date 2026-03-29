@@ -1,0 +1,83 @@
+{
+  "_comment": "Maps business types to their most relevant document templates. Used during Zero to Branded setup to pre-select and surface the right template subset for the user's business.",
+  "business_types": [
+    {
+      "id": "agency",
+      "label": "Creative / Marketing Agency",
+      "description": "Design, branding, marketing, advertising, or PR agencies",
+      "match_keywords": ["agency", "design", "creative", "marketing", "branding", "advertising", "PR", "digital agency"],
+      "active_templates": ["proposal", "sow", "contract", "case-study", "sales-deck", "price-list"],
+      "suggested_first_doc": "proposal",
+      "first_doc_prompt": "Create a Client Proposal for your next pitch"
+    },
+    {
+      "id": "consultancy",
+      "label": "Consultancy / Advisory",
+      "description": "Strategy, management, finance, HR, legal, or specialist consultancies",
+      "match_keywords": ["consultant", "consultancy", "advisory", "advisor", "strategy", "management consulting", "fractional"],
+      "active_templates": ["proposal", "sow", "contract", "nda", "case-study", "sales-deck", "price-list", "status-update"],
+      "suggested_first_doc": "proposal",
+      "first_doc_prompt": "Create a Consulting Proposal for a new engagement"
+    },
+    {
+      "id": "tech-startup",
+      "label": "Tech Startup / SaaS",
+      "description": "Software companies, SaaS products, apps, developer tools, or early-stage tech businesses",
+      "match_keywords": ["startup", "saas", "software", "app", "platform", "tech", "developer", "product", "B2B software"],
+      "active_templates": ["pitch-deck", "prd", "nda", "contract", "sow", "status-update", "technical-report"],
+      "suggested_first_doc": "pitch-deck",
+      "first_doc_prompt": "Create a Pitch Deck for investors or partners"
+    },
+    {
+      "id": "freelancer",
+      "label": "Freelancer / Independent Contractor",
+      "description": "Solo practitioners — developers, writers, photographers, videographers, coaches, trainers",
+      "match_keywords": ["freelance", "freelancer", "independent", "solo", "contractor", "self-employed", "coach", "trainer", "photographer", "videographer", "copywriter"],
+      "active_templates": ["proposal", "contract", "nda", "price-list", "case-study"],
+      "suggested_first_doc": "proposal",
+      "first_doc_prompt": "Create a Project Proposal for a new client"
+    },
+    {
+      "id": "professional-services",
+      "label": "Professional Services",
+      "description": "Law firms, accounting firms, financial advisors, architects, engineers, surveyors",
+      "match_keywords": ["law", "legal", "accounting", "accountant", "finance", "architect", "engineering", "surveyor", "auditor", "financial advisor"],
+      "active_templates": ["proposal", "contract", "nda", "sow", "technical-report", "status-update", "price-list"],
+      "suggested_first_doc": "proposal",
+      "first_doc_prompt": "Create a Services Proposal for a new client engagement"
+    },
+    {
+      "id": "product-company",
+      "label": "Product Company",
+      "description": "Companies that build and sell physical or digital products — hardware, e-commerce, manufacturing",
+      "match_keywords": ["product", "hardware", "e-commerce", "manufacturing", "retail", "wholesale", "physical product"],
+      "active_templates": ["sales-deck", "pitch-deck", "contract", "nda", "price-list", "case-study", "portfolio"],
+      "suggested_first_doc": "sales-deck",
+      "first_doc_prompt": "Create a Sales Deck for your product"
+    },
+    {
+      "id": "internal-team",
+      "label": "Internal Team / Department",
+      "description": "An internal team, division, or department using doc-factory for internal communications and operations",
+      "match_keywords": ["internal", "team", "department", "division", "ops", "operations", "in-house"],
+      "active_templates": ["status-update", "runbook", "technical-report", "prd", "sow"],
+      "suggested_first_doc": "status-update",
+      "first_doc_prompt": "Create a Project Status Update for your team"
+    },
+    {
+      "id": "general",
+      "label": "General / Other",
+      "description": "Fallback for businesses that don't clearly match another type",
+      "match_keywords": [],
+      "active_templates": ["proposal", "contract", "nda", "price-list", "sales-deck", "status-update"],
+      "suggested_first_doc": "proposal",
+      "first_doc_prompt": "Create your first document"
+    }
+  ],
+  "inference_rules": [
+    "Match against match_keywords first (case-insensitive)",
+    "If multiple types match, prefer the one with more keyword matches",
+    "If no keywords match, use 'general' as the fallback",
+    "Never ask the user to pick a business type explicitly — infer it from the conversation"
+  ]
+}

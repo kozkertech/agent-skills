@@ -1,0 +1,19 @@
+{
+  "id": "xyz_corp_case_study",
+  "client": "XYZ Corp",
+  "challenge": "As a mid-market retailer with 200+ locations, XYZ Corp struggled with manual order processing and inventory reconciliation. Their distributed operations required 150 FTEs in back-office roles, leading to 3-5 day order processing delays and frequent inventory discrepancies.",
+  "solution": "Orbis AI deployed an integrated workflow automation platform that digitized order intake, automated inventory reconciliation, and streamlined exception handling across all locations. The solution connected legacy POS systems, ERP, and WMS with AI-driven intelligent document processing and decision logic.",
+  "outcome": "Reduced order processing time from 4 days to 1.5 days (60% improvement). Automated 70% of previously manual work, enabling workforce reallocation. Achieved $2.1M annual savings through efficiency gains and reduced errors. Improved inventory accuracy from 94% to 99%.",
+  "metrics": {
+    "processing_time_reduction_percentage": 60,
+    "automation_coverage_percentage": 70,
+    "annual_savings_usd": 2100000,
+    "inventory_accuracy_improvement": 5,
+    "deployment_timeline_weeks": 12
+  },
+  "testimonial": "Orbis AI transformed how we operate. The automation platform has been transformative for our business, allowing us to serve customers faster while using our team more strategically. The ROI was clear in the first quarter.",
+  "client_type": "Mid-market Retail",
+  "implementation_scope": "250+ workflow automations across order-to-cash, inventory, and customer service processes",
+  "type": "proof.case_study",
+  "updated_at": "2026-03-23T15:12:32.752744"
+}

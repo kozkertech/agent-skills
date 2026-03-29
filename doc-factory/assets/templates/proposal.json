@@ -1,0 +1,35 @@
+{
+  "id": "proposal",
+  "name": "Client Proposal",
+  "description": "A structured commercial proposal for new or existing clients",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "professional",
+  "audience": "external client",
+  "writing_sub_skill": "doc-coauthoring",
+  "required_sections": [
+    { "id": "cover", "title": "Cover Page", "description": "Company logo, client name, proposal title, date" },
+    { "id": "exec_summary", "title": "Executive Summary", "description": "2–3 paragraph overview of the opportunity and proposed solution" },
+    { "id": "situation", "title": "Understanding Your Situation", "description": "Client's challenge or goal as we understand it" },
+    { "id": "solution", "title": "Our Solution", "description": "Description of the proposed approach and deliverables" },
+    { "id": "scope", "title": "Scope of Work", "description": "Itemised list of in-scope and out-of-scope activities" },
+    { "id": "timeline", "title": "Timeline", "description": "High-level project phases and milestones" },
+    { "id": "investment", "title": "Investment", "description": "Pricing table or fee schedule" },
+    { "id": "terms", "title": "Terms & Conditions", "description": "Standard payment, liability, and IP terms" },
+    { "id": "next_steps", "title": "Next Steps", "description": "Clear call-to-action for the client" }
+  ],
+  "optional_sections": [
+    { "id": "case_studies", "title": "Relevant Experience", "description": "1–2 case studies showing similar work", "include_when": "case studies are available in context library" },
+    { "id": "team", "title": "Our Team", "description": "Short bios of key personnel", "include_when": "client has requested team info or team_bios are populated" }
+  ],
+  "required_context": ["company_profile", "services", "legal_clauses.payment_terms"],
+  "instance_inputs": [
+    { "key": "client_name", "label": "Client name", "required": true, "default": null },
+    { "key": "client_contact", "label": "Client contact person", "required": false, "default": null },
+    { "key": "project_title", "label": "Project / engagement title", "required": true, "default": null },
+    { "key": "scope_items", "label": "Scope line items (describe the work)", "required": true, "default": null },
+    { "key": "fee_total", "label": "Total fee (or 'TBD')", "required": false, "default": "TBD" },
+    { "key": "valid_until", "label": "Proposal valid until date", "required": false, "default": null }
+  ]
+}

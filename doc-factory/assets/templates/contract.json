@@ -1,0 +1,35 @@
+{
+  "id": "contract",
+  "name": "Services Contract",
+  "description": "A general services or master services agreement between two parties",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "formal",
+  "audience": "external client",
+  "writing_sub_skill": "doc-coauthoring",
+  "required_sections": [
+    { "id": "cover", "title": "Cover Page", "description": "Agreement title, parties, effective date, version" },
+    { "id": "definitions", "title": "Definitions", "description": "Key terms used throughout the agreement" },
+    { "id": "services", "title": "Services", "description": "Description of services to be provided" },
+    { "id": "obligations", "title": "Obligations of Each Party", "description": "What each party is required to do" },
+    { "id": "fees", "title": "Fees & Payment", "description": "Pricing, invoicing, and payment terms" },
+    { "id": "ip", "title": "Intellectual Property", "description": "Ownership of work product and background IP" },
+    { "id": "confidentiality", "title": "Confidentiality", "description": "NDA-like obligations for both parties" },
+    { "id": "liability", "title": "Limitation of Liability", "description": "Caps and exclusions" },
+    { "id": "term_termination", "title": "Term & Termination", "description": "Duration and conditions for termination" },
+    { "id": "general", "title": "General Provisions", "description": "Governing law, entire agreement, amendments, notices" },
+    { "id": "signatures", "title": "Signatures", "description": "Execution blocks for both parties" }
+  ],
+  "optional_sections": [
+    { "id": "data_protection", "title": "Data Protection", "description": "GDPR/data processing obligations", "include_when": "services involve handling personal data" },
+    { "id": "insurance", "title": "Insurance", "description": "Required insurance coverage", "include_when": "high-value or regulated engagement" }
+  ],
+  "required_context": ["company_profile", "legal_clauses"],
+  "instance_inputs": [
+    { "key": "client_name", "label": "Client legal name", "required": true, "default": null },
+    { "key": "client_address", "label": "Client registered address", "required": false, "default": null },
+    { "key": "effective_date", "label": "Effective date", "required": true, "default": null },
+    { "key": "service_description", "label": "High-level description of services", "required": true, "default": null }
+  ]
+}

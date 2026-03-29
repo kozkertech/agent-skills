@@ -1,0 +1,33 @@
+{
+  "id": "technical-report",
+  "name": "Technical Report",
+  "description": "A long-form technical report, assessment, or research document",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": true,
+  "tone": "authoritative and precise",
+  "audience": "technical stakeholders or client technical team",
+  "writing_sub_skill": "doc-coauthoring",
+  "layout_notes": "Include a table of contents. Use numbered headings. For very long reports (>20 pages), consider LaTeX format — ask the user if they want DOCX or LaTeX.",
+  "required_sections": [
+    { "id": "cover", "title": "Cover Page", "description": "Report title, prepared by, prepared for, date, version, classification" },
+    { "id": "toc", "title": "Table of Contents", "description": "Auto-generated from headings" },
+    { "id": "executive_summary", "title": "Executive Summary", "description": "1-page summary of purpose, approach, key findings, and recommendations" },
+    { "id": "introduction", "title": "Introduction", "description": "Background, objectives, and scope" },
+    { "id": "methodology", "title": "Methodology", "description": "How the work was conducted — tools, frameworks, data sources" },
+    { "id": "findings", "title": "Findings", "description": "The main body — detailed results, analysis, evidence" },
+    { "id": "recommendations", "title": "Recommendations", "description": "Prioritised actions based on findings" },
+    { "id": "conclusion", "title": "Conclusion", "description": "Summary and closing remarks" }
+  ],
+  "optional_sections": [
+    { "id": "appendices", "title": "Appendices", "description": "Supporting data, raw results, or additional detail", "include_when": "supporting data is available" },
+    { "id": "references", "title": "References", "description": "Citations and sources", "include_when": "external sources were used" }
+  ],
+  "required_context": ["company_profile"],
+  "instance_inputs": [
+    { "key": "report_title", "label": "Report title", "required": true, "default": null },
+    { "key": "prepared_for", "label": "Prepared for (client or team)", "required": true, "default": null },
+    { "key": "subject", "label": "Subject / topic of the report", "required": true, "default": null },
+    { "key": "classification", "label": "Classification (e.g. Confidential, Internal, Public)", "required": false, "default": "Confidential" }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "price-list",
+  "name": "Price List / Rate Card",
+  "description": "A formatted price list or rate card for services or products",
+  "version": "1.0",
+  "format": "xlsx",
+  "pdf_export": true,
+  "tone": "clear and professional",
+  "audience": "external client or internal reference",
+  "writing_sub_skill": "none",
+  "layout_notes": "One sheet per service category if multiple categories. Use branded header row colours. Include a cover/summary tab. Keep it scannable — avoid dense footnotes inline; put notes in a separate tab.",
+  "required_sections": [
+    { "id": "cover_tab", "title": "Cover / Summary", "description": "Company name, logo, price list title, effective date, contact info" },
+    { "id": "services_tab", "title": "Services & Pricing", "description": "Table with columns: Service Name, Description, Unit, Price, Notes" }
+  ],
+  "optional_sections": [
+    { "id": "packages_tab", "title": "Packages", "description": "Bundled package pricing if applicable", "include_when": "packages or bundles exist" },
+    { "id": "terms_tab", "title": "Terms & Notes", "description": "Payment terms, volume discounts, exclusions", "include_when": "non-trivial terms apply" }
+  ],
+  "required_context": ["company_profile", "services", "legal_clauses.payment_terms"],
+  "instance_inputs": [
+    { "key": "effective_date", "label": "Price list effective date", "required": false, "default": null },
+    { "key": "currency", "label": "Currency (e.g. USD, GBP, EUR)", "required": false, "default": "USD" },
+    { "key": "services_to_include", "label": "Which services to include (or 'all')", "required": false, "default": "all" },
+    { "key": "include_internal_notes", "label": "Include internal cost/margin notes? (yes/no)", "required": false, "default": "no" }
+  ]
+}

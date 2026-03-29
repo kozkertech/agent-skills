@@ -1,0 +1,36 @@
+{
+  "id": "sales-deck",
+  "name": "Sales Deck",
+  "description": "A polished sales presentation for client meetings or demos",
+  "version": "1.0",
+  "format": "pptx",
+  "pdf_export": true,
+  "tone": "confident and persuasive",
+  "audience": "prospective or existing client",
+  "writing_sub_skill": "none",
+  "layout_notes": "Target 10–15 slides. Lead with the client's problem, not company credentials. Use visuals over text-heavy slides.",
+  "required_sections": [
+    { "id": "title", "title": "Title Slide", "description": "Company logo, deck title, client name, date, presenter name" },
+    { "id": "agenda", "title": "Agenda", "description": "Brief overview of what will be covered" },
+    { "id": "problem", "title": "The Problem We Solve", "description": "Frame the pain point the client faces — make them feel understood" },
+    { "id": "solution", "title": "Our Solution", "description": "How we solve that problem — lead with outcomes, not features" },
+    { "id": "how_it_works", "title": "How It Works", "description": "A simple visual or process showing the approach" },
+    { "id": "services", "title": "What We Offer", "description": "Key services or products relevant to this client" },
+    { "id": "case_studies", "title": "Proof Points", "description": "1–2 client results — stats and brief story" },
+    { "id": "why_us", "title": "Why Choose Us", "description": "Differentiators and unique value" },
+    { "id": "team", "title": "Who You'll Work With", "description": "Key team members for this engagement" },
+    { "id": "next_steps", "title": "Next Steps", "description": "Clear, specific actions for the client" },
+    { "id": "contact", "title": "Thank You / Contact", "description": "Logo, contact details, website" }
+  ],
+  "optional_sections": [
+    { "id": "pricing", "title": "Investment", "description": "Pricing slide or investment overview", "include_when": "client has asked for pricing or it is appropriate to include" },
+    { "id": "timeline", "title": "Timeline", "description": "High-level project timeline", "include_when": "engagement timeline has been discussed" }
+  ],
+  "required_context": ["company_profile", "services", "boilerplate.why_us"],
+  "instance_inputs": [
+    { "key": "client_name", "label": "Client name", "required": true, "default": null },
+    { "key": "presenter_name", "label": "Presenter name", "required": false, "default": null },
+    { "key": "focus_services", "label": "Which services to feature (or 'all')", "required": false, "default": "all" },
+    { "key": "meeting_context", "label": "Context for this meeting (e.g. 'first discovery call', 'proposal follow-up')", "required": false, "default": null }
+  ]
+}

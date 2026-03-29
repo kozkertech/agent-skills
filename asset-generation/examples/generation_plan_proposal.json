@@ -1,0 +1,27 @@
+{
+  "workflow": "document_generation",
+  "document_type": "proposal",
+  "template_id": "proposal_standard_v1",
+  "brand_id": "active_brand",
+  "context_sources": [
+    "company.profile",
+    "services.catalog",
+    "pricing.current"
+  ],
+  "instance_inputs": {
+    "client_name": "GlobalTech Industries",
+    "project_name": "AI Workflow Automation",
+    "project_scope": "Design and deploy an AI-powered workflow automation platform to streamline manufacturing and supply chain operations."
+  },
+  "content": {
+    "executive_summary": "We are pleased to present this proposal to GlobalTech Industries for the AI Workflow Automation project. Our team brings deep expertise in AI-driven process automation, and we are confident this engagement will deliver measurable efficiency gains across your manufacturing and supply chain operations.",
+    "client_context": "GlobalTech Industries operates across 12 manufacturing sites and currently manages supply chain coordination through a mix of legacy ERP systems and manual processes. This fragmentation creates delays, data inconsistencies, and significant operational overhead.",
+    "proposed_solution": "We propose a phased AI Workflow Automation platform that integrates with your existing ERP systems, automates repetitive coordination tasks, and surfaces predictive insights for supply chain decision-making. The platform will be cloud-native, API-first, and fully auditable.",
+    "scope_of_work": "Phase 1: Process audit and requirements gathering (4 weeks). Phase 2: Platform architecture and design (3 weeks). Phase 3: Core automation engine development (8 weeks). Phase 4: Integration testing and deployment (4 weeks). Phase 5: Training and handover (2 weeks).",
+    "timeline": "The engagement is structured as a 21-week programme beginning on the agreed kickoff date. Key milestones: Requirements sign-off at Week 4, Architecture approval at Week 7, MVP demonstration at Week 15, Go-live at Week 19, and final handover at Week 21.",
+    "pricing": "Based on the agreed scope, the total investment for this engagement is USD 48,000, inclusive of all phases and deliverables. Payment is structured in three instalments: 30% on contract signature, 40% at MVP demonstration, and 30% on final handover.",
+    "next_steps": "To proceed, please review this proposal and sign the accompanying contract. Once signed, we will schedule a kickoff meeting within 5 business days. Please contact us at partnerships@acmeconsulting.com with any questions."
+  },
+  "output_format": "docx",
+  "pdf_export": true
+}

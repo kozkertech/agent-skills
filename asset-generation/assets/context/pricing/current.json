@@ -1,0 +1,45 @@
+{
+  "currency": "USD",
+  "pricing_model": "package-based",
+  "prices": [
+    {
+      "service_id": "strategy",
+      "price": 12000,
+      "currency": "USD",
+      "billing": "fixed",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "service_id": "implementation",
+      "price": 45000,
+      "currency": "USD",
+      "billing": "milestone",
+      "valid_from": "2026-01-01"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Starter",
+      "price": 4500,
+      "billing": "fixed",
+      "description": "Essential digital services package"
+    },
+    {
+      "name": "Growth",
+      "price": 11000,
+      "billing": "fixed",
+      "description": "Comprehensive digital solutions for expanding businesses"
+    },
+    {
+      "name": "Enterprise",
+      "price": 22000,
+      "billing": "monthly_retainer",
+      "description": "Premium, fully-managed digital transformation services"
+    }
+  ],
+  "payment_terms": "Net 30. Invoices due within 30 days of service commencement.",
+  "note": "All packages include ongoing support and quarterly reviews",
+  "type": "pricing.current",
+  "notes": "Volume discounts available for multi-service engagements.",
+  "updated_at": "2026-03-24T00:16:42.492352"
+}

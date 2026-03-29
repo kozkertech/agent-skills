@@ -1,0 +1,31 @@
+{
+  "id": "status-update",
+  "name": "Project Status Update",
+  "description": "An internal or client-facing project status update or 3P update",
+  "version": "1.0",
+  "format": "docx",
+  "pdf_export": false,
+  "tone": "clear, direct, and concise",
+  "audience": "internal team or client stakeholders",
+  "writing_sub_skill": "internal-comms",
+  "required_sections": [
+    { "id": "header", "title": "Header", "description": "Project name, report date, reporting period, author, status RAG (Red/Amber/Green)" },
+    { "id": "summary", "title": "Summary", "description": "2–3 sentences on overall status and most important item this period" },
+    { "id": "progress", "title": "Progress", "description": "What was accomplished since last report" },
+    { "id": "plans", "title": "Plans", "description": "What is planned for the next period" },
+    { "id": "problems", "title": "Problems / Risks", "description": "Issues, blockers, and risks with owners and actions" }
+  ],
+  "optional_sections": [
+    { "id": "decisions", "title": "Decisions Needed", "description": "Items requiring stakeholder decision or sign-off", "include_when": "decisions are pending" },
+    { "id": "metrics", "title": "Key Metrics", "description": "KPIs or delivery metrics relevant to stakeholders", "include_when": "metrics tracking is in place" }
+  ],
+  "required_context": ["company_profile.name"],
+  "instance_inputs": [
+    { "key": "project_name", "label": "Project name", "required": true, "default": null },
+    { "key": "reporting_period", "label": "Reporting period (e.g. 'Week of 17 Mar 2026')", "required": true, "default": null },
+    { "key": "rag_status", "label": "Overall status: Green / Amber / Red", "required": true, "default": "Green" },
+    { "key": "progress_items", "label": "What was accomplished", "required": true, "default": null },
+    { "key": "plans_items", "label": "What is planned next", "required": true, "default": null },
+    { "key": "problems_items", "label": "Issues or risks (or 'none')", "required": false, "default": "None at this time" }
+  ]
+}
