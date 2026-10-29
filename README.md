@@ -1,1 +1,2 @@
-# Agent Skills by KozkerLabs Team
+# Agent Skills
+
