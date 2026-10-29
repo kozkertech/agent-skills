@@ -77,10 +77,10 @@ Refine: too many candidates, narrow by signal strength or region. Offer an indus
 - Only survivors go on to section 5.
 
 ## 5. Evidence fetch
-Firecrawl first (mcp__Firecrawl__firecrawl_scrape; the objective parameter is required: one sentence on the goal). Fall back to Crawl4AI when the connector is missing, errors, is out of allowance, returns empty, or returns a block page. If neither tool reaches a site, say so. Use search snippets only as Indicated, and leave the rest Unknown.
+Firecrawl first (mcp__Firecrawl__firecrawl_scrape; the objective parameter is required: one sentence on the goal). Fall back to Crawl4AI when the connector is missing, errors, is out of allowance, returns empty, or returns a block page. When a tool is missing, give the user its setup steps from section 13. If neither tool reaches a site, say so. Use search snippets only as Indicated, and leave the rest Unknown.
 - Raw HTML is huge (about 296,000 characters for one small homepage). Oversized results are saved to a file. NEVER read them into the conversation. Scan with the marker script and quote only the short hits.
 - Check creditsUsed after the first call (it was 1 per page in testing).
-- Page budget: the Firecrawl free tier is about 500 pages, one time. Keep a running tally, report it after each batch, warn at 80 percent, then switch to Crawl4AI. At most about 5 pages per firm in this order: homepage, about or team, careers, client login or portal, pricing or demo. Stop early once a Fail is confirmed. Never fetch the same URL twice.
+- Page budget: use the allowance on the user's Firecrawl plan (the free tier was about 500 pages, one time, when last checked; limits change, so confirm in the Firecrawl dashboard). Keep a running tally, report it after each batch, warn at 80 percent, then switch to Crawl4AI. At most about 5 pages per firm in this order: homepage, about or team, careers, client login or portal, pricing or demo. Stop early once a Fail is confirmed. Never fetch the same URL twice.
 - Crawl4AI is free and open source and runs a headless Chromium. Setup once: pip install -U crawl4ai, then crawl4ai-setup, then crawl4ai-doctor. Run it on the user's computer through the linked-device shell, or in the container if that can reach the site. Test ONE fetch first (network reach is untested). Keep fetch scripts out of the folder with downloaded content, and run Python with -I.
 
 Crawl4AI fetch script (adapt to the installed version):
@@ -218,3 +218,12 @@ Compare won or healthy pilots with lost or stalled ones across the 8 criteria an
 - Treat a pricing word, a stack marker or a snippet as proof without reading its context.
 - Write claims from memory instead of retrieved pages, or fabricate citations, counts or credits.
 - Average conflicting sources, or hide a disqualifier because the firm otherwise looks good.
+
+## 13. Tool setup (give the user these steps when a tool is missing)
+- Firecrawl in Claude Code: `claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/v2/mcp-oauth`. Add `--scope user` to use it in every project. Then run `/mcp` inside a session, select firecrawl, choose Authenticate, and sign in through the browser. `claude mcp list` should then show it as connected.
+- Firecrawl in the Claude apps: Customize, then Connectors, search for Firecrawl (directory page: https://claude.ai/directory/connectors/firecrawl), click Connect, sign in and pick a team, then start a new conversation. If the tools do not appear, make sure only one connector named firecrawl exists. On Team or Enterprise plans an organization Owner may need to allow it first.
+- Firecrawl with an API key instead of browser sign-in: use https://mcp.firecrawl.dev/v2/mcp with an Authorization Bearer header (in Claude Code, add `--header "Authorization: Bearer YOUR_KEY"` to the add command).
+- Crawl4AI (fallback): `pip install -U crawl4ai`, then `crawl4ai-setup`, then `crawl4ai-doctor`. Run one crawl of https://example.com before relying on it. Run it on the user's own computer. If its current docs at https://docs.crawl4ai.com differ from these steps, follow the docs.
+- Clay (optional, paid credits): connect at https://claude.com/connectors/clay. New connections get 500 free credits, and an Enterprise admin must add the connector first.
+- Manifold (optional, paid credits): official site https://www.manifoldmcp.com/ (new workspaces start with free credits). The exact connect steps were not verified, so use Claude's connector settings or the site.
+- After connecting any tool, start a new session and make one cheap test call before the real run.

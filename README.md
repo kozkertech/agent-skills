@@ -52,9 +52,9 @@ To update a skill later, run `git pull` in the clone and copy the folder again.
 cp -r sales-skills/icp-prospect-engine ~/.claude/skills/
 ```
 
-- Needs: the Firecrawl connector, which it uses first to fetch pages.
+- Needs: the Firecrawl connector, which it uses first to fetch pages. Setup steps are in [Setting up the tools](#setting-up-the-tools).
 - Optional fallback when Firecrawl is missing or out of allowance: `pip install -U crawl4ai`, then `crawl4ai-setup`, then `crawl4ai-doctor`.
-- Optional: Manifold or Clay for headcount. The skill uses them only when you ask, and shows a spend preview first.
+- Optional, not required: Manifold or Clay for headcount and company lookups. The skill uses them only when you ask, and shows a spend preview first.
 - Try it: "Find firms that fit our ICP table and verify them." To narrow by industry, say so: "Only logistics and compliance firms", or "skip staffing". Without that, it stays industry-agnostic and does not ask.
 
 #### document-skills/asset-generation
@@ -93,6 +93,60 @@ cd document-skills && zip -r doc-factory.zip doc-factory && cd ..
 For `doc-factory` you can also upload the packaged `document-skills/doc-factory.skill`. Connectors such as Firecrawl and Canva are connected in Claude's connector settings, not inside the skill.
 
 Each `SKILL.md` says what the skill uses and what happens without it.
+
+## Setting up the tools
+
+`icp-prospect-engine` is the only skill here that depends on outside tools. Firecrawl is the first-choice page fetcher and Crawl4AI is the free fallback. Clay and Manifold are optional paid add-ons for headcount and company lookups. The skill leaves them off unless you ask, and it shows a spend preview before using any credits.
+
+### Firecrawl (first choice)
+
+**Claude Code:**
+
+```bash
+claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/v2/mcp-oauth
+```
+
+Add `--scope user` to use it in every project. Then start `claude`, run `/mcp`, select firecrawl, choose Authenticate and sign in through your browser. `claude mcp list` should show it as connected.
+
+**Claude apps:** open Customize, then Connectors, and search for Firecrawl (or use the [directory page](https://claude.ai/directory/connectors/firecrawl)). Click Connect, sign in, pick a team, then start a new conversation. If the tools do not appear, check that only one connector named `firecrawl` exists. On Team or Enterprise plans, an organization Owner may need to allow it first.
+
+**API key instead of browser sign-in:** use `https://mcp.firecrawl.dev/v2/mcp` with an `Authorization: Bearer` header. In Claude Code, add `--header "Authorization: Bearer YOUR_KEY"` to the command above (and drop `-oauth` from the URL).
+
+**Check it works:** ask "Scrape https://firecrawl.dev and explain what it does." Free-tier limits change, so confirm your allowance in the Firecrawl dashboard. The skill keeps a running page count and warns before the allowance runs out.
+
+### Crawl4AI (free fallback)
+
+```bash
+pip install -U crawl4ai
+crawl4ai-setup
+crawl4ai-doctor
+```
+
+`crawl4ai-setup` installs the browser dependencies, and `crawl4ai-doctor` checks your Python version and Playwright install. Run it on your own computer. Then test one crawl before relying on it:
+
+```bash
+python3 - <<'EOF'
+import asyncio
+from crawl4ai import AsyncWebCrawler
+
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url="https://example.com")
+        print(result.success, str(result.markdown)[:200])
+
+asyncio.run(main())
+EOF
+```
+
+The project's install page may be out of date. If a step fails, follow the current docs at [docs.crawl4ai.com](https://docs.crawl4ai.com).
+
+### Clay (optional)
+
+Connect at [claude.com/connectors/clay](https://claude.com/connectors/clay). New connections get 500 free credits, and after that actions use your Clay plan credits. On Claude Enterprise, an admin must add the connector first. Workspace admins set credit limits in Clay under Settings, then MCP users.
+
+### Manifold (optional)
+
+Official site: [manifoldmcp.com](https://www.manifoldmcp.com/). New workspaces start with free credits, then usage is metered. Each tool shows its price before it runs, and a call can be capped. Connect it from Claude's connector settings or follow the instructions on the site.
 
 ## Adding a skill
 
