@@ -13,14 +13,14 @@ agent-skills/
 │   ├── doc-factory/           Branded document factory (DOCX, PPTX, XLSX, PDF)
 │   └── doc-factory.skill      Packaged copy of doc-factory
 └── sales-skills/
-    └── icp-prospect-engine/   Industry-agnostic ICP prospecting and scoring
+    └── icp-prospect-engine/   ICP prospecting and scoring, with optional industry scope
 ```
 
 ## Skills
 
 | Category | Skill | What it does |
 |---|---|---|
-| sales-skills | [`icp-prospect-engine`](sales-skills/icp-prospect-engine/SKILL.md) | Finds and verifies prospects against an 8-criterion ICP table with no industry filter. Discovers firms by signal, gathers evidence from their own sites (Firecrawl first, Crawl4AI as fallback), scores them by rule, tries to disprove the best ones, and delivers a simple spreadsheet. |
+| sales-skills | [`icp-prospect-engine`](sales-skills/icp-prospect-engine/SKILL.md) | Finds and verifies prospects against an 8-criterion ICP table. Industry-agnostic by default, with an optional industry scope (focus on or exclude industries) when you ask for one. Discovers firms by signal, gathers evidence from their own sites (Firecrawl first, Crawl4AI as fallback), scores them by rule, tries to disprove the best ones, and delivers a simple spreadsheet. |
 | document-skills | [`asset-generation`](document-skills/asset-generation/SKILL.md) | Generates branded business documents, presentations and spreadsheets on demand, such as proposals, contracts, statements of work, sales and pitch decks, price lists, case studies and reports. |
 | document-skills | [`doc-factory`](document-skills/doc-factory/SKILL.md) | Branded document factory that keeps company identity consistent across contracts, proposals, SOWs, NDAs, PRDs, decks, price lists and reports. Outputs DOCX, PPTX, XLSX and PDF, and can set up a brand identity from scratch. |
 
@@ -55,7 +55,7 @@ cp -r sales-skills/icp-prospect-engine ~/.claude/skills/
 - Needs: the Firecrawl connector, which it uses first to fetch pages.
 - Optional fallback when Firecrawl is missing or out of allowance: `pip install -U crawl4ai`, then `crawl4ai-setup`, then `crawl4ai-doctor`.
 - Optional: Manifold or Clay for headcount. The skill uses them only when you ask, and shows a spend preview first.
-- Try it: "Find firms that fit our ICP table and verify them."
+- Try it: "Find firms that fit our ICP table and verify them." To narrow by industry, say so: "Only logistics and compliance firms", or "skip staffing". Without that, it stays industry-agnostic and does not ask.
 
 #### document-skills/asset-generation
 
